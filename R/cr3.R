@@ -28,7 +28,7 @@ cr3 <- function(model, dat = NULL, cluster, df = Inf, adj = TRUE, seonly = TRUE)
   y <- model.response(mod_data)
   cf <- coef(model)
   e <- model$residuals
-
+  nm <- names(coef(model))
   # cluster_col <- deparse(substitute(cluster))
   # cluster_col <- gsub('["\']', '', cluster_col) # Clean quotes
 
@@ -77,6 +77,7 @@ cr3 <- function(model, dat = NULL, cluster, df = Inf, adj = TRUE, seonly = TRUE)
   vc_diag <- colSums(diff_sq)
   adjf <- if(adj) (n_clusters - 1) / n_clusters else 1
   se <- sqrt(adjf * vc_diag)
+  names(se) <- nm
 
   tstat <- cf / se
   if (is.infinite(df)) df <- n_clusters - 1
