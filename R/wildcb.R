@@ -18,9 +18,6 @@
 #'
 #' @importFrom stats coef lm model.frame quantile update as.formula
 #' @export
-#'
-
-
 wildcb <- function(fml, cluster, dat, B = 999, seed = 0, cr3 = FALSE,
                    param = NULL) {
 
