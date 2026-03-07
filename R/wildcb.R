@@ -109,11 +109,14 @@ wildcb <- function(fml, cluster, dat, B = 999, seed = 0, cr3 = FALSE,
         meat <- (t(u_g) %*% u_g) * df_c
         boot_vcov <- bread %*% meat %*% bread
         boot_se <- sqrt(diag(boot_vcov))
+        tstar[i, ] <- (bhat[, 1] - tb) / boot_se
       } else { #cr3
         m2 <- update(m1, ystar ~ .)
+        bhat <- coef(m2)
         boot_se <- cr3(m2, dat = dat, cluster = cluster)
+        tstar[i, ] <- (bhat - tb) / boot_se
       }
-      tstar[i, ] <- (bhat[, 1] - tb) / boot_se
+
     }
 
   }
@@ -161,7 +164,7 @@ wildcb <- function(fml, cluster, dat, B = 999, seed = 0, cr3 = FALSE,
 
   rownames(res) <- NULL
   type = ifelse(cr3, "CR3", 'CR1')
-  type = ifelse(is.null(param), type, "CR1") #only available
+  # type = ifelse(is.null(param), type, "CR1") #only available
   type2 = ifelse(is.null(param), 'WCU', 'WCR')
   # cat("Standard Error:", type, '\n')
   # cat("WCB Type:", type2, '\n')
