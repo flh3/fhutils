@@ -14,6 +14,7 @@
 #'
 #' @examples
 #' g1 <- cb(mpg ~ wt + am, cluster = 'cyl', dat = mtcars)
+#' g1
 #
 #'
 #' @importFrom stats coef lm model.frame quantile update as.formula lm.fit qnorm pnorm sd

@@ -29,5 +29,6 @@ Fits a cluster bootstrapped linear model.
 }
 \examples{
 g1 <- cb(mpg ~ wt + am, cluster = 'cyl', dat = mtcars)
+g1
 
 }
