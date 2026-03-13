@@ -1,0 +1,24 @@
+#' jxe_iv
+#'
+#' Journal of Experimental Education Instrumental Variable Dosage Example Data.
+#'
+#' @format A data frame with 310 rows and 26 variables:
+#' \describe{
+#'   \item{teachcare_post}{Teachers who care outcome variable.}
+#'   \item{teachcare_pre}{Teachers who care baseline variable.}
+#'   \item{int}{Treatment assignment (1 = treatment; 0 = control).}
+#'   \item{fem}{Female (1 = Female, 0 = male).}
+#'   \item{black}{Race dummy code (black = 1).}
+#'   \item{frpl}{Eligible for free or reduced price lunch (1 = yes, 0 = no).}
+#'   \item{other}{Race dummy code (other = 1).}
+#'   \item{school_id}{School id variable [1-14].}
+#'   \item{lesson_attend_perc}{Percentage of lessons attended (out of 10).}
+#'   \item{takeup}{Indicates whether participant attended one or more sessions (1 = yes; 0 = no).}
+#'   \item{school_id_1, school_id_2, school_id_3, school_id_4, school_id_5,
+#'         school_id_6, school_id_7, school_id_8, school_id_9, school_id_10,
+#'         school_id_11, school_id_12, school_id_13, school_id_14}{Binary
+#'         indicators (0/1) for school membership.}'
+#'   \item{teacher_id}{Teacher id variable [1-65\.}
+#'   \item{race}{Race indicator. (1 = White. 2 = Black. 3 = Other.)}
+#'   }
+"jxe_iv"
