@@ -38,8 +38,8 @@ wildcb <- function(fml, cluster, dat, B = 999, seed = 0, cr3 = FALSE,
     tb2 = coef(m1)[param]
     tstat = tb2 / obsse2[param]
 
-    drop_var <- param
-    fml <- update(fml, as.formula(paste("~ . -", drop_var)))
+
+    fml <- update(fml, as.formula(paste("~ . -", param)))
   }
 
   # 1. Initial Model and Parameters

@@ -19,6 +19,6 @@ Computes the effective number of clusters in the dataset.
 }
 \examples{
 m1 <- lm(mpg ~ wt, mtcars)
-effclust(m1, 'cyl')
+effclust(m1, mtcars$cyl)
 
 }
