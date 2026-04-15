@@ -24,6 +24,7 @@
 #'
 #' @importFrom stats pf symnum
 #' @export
+#' @method anova lm_robust
 anova.lm_robust <- function(...) {
 
   mods <- list(...)
