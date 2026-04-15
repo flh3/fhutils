@@ -1,3 +1,4 @@
+#' @importFrom stats residuals resid predict
 wcr <- function(fmlf, dat, param, B = 999, cluster){
 
   # fmlr <- 'wage ~ ttl_exp + collgrad'
@@ -24,7 +25,7 @@ wcr <- function(fmlf, dat, param, B = 999, cluster){
   S <- Matrix::fac2sparse(gr)
   g_res <- lm(fmlr, data = dat) # Null imposed: param removed [cite: 193]
   b <- coef(g_res)
-  utilde <- resid(g_res) # get residuals of restricted
+  utilde <- residuals(g_res) # get residuals of restricted
   Xr <- model.matrix(g_res)
 
   # 2. Pre-calculate Constant "Bread" and Small Sample Adjustment [cite: 127, 524, 646]

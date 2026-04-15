@@ -1,3 +1,4 @@
+#' @importFrom stats residuals
 wcr_optimized <- function(fmlf, dat, param, B = 999, cluster) {
 
   # 1. Setup and Restricted Model (WCR)
@@ -15,7 +16,7 @@ wcr_optimized <- function(fmlf, dat, param, B = 999, cluster) {
   m <- (G / (G - 1)) * ((N - 1) / (N - k))
 
   g_res <- lm(fmlr, data = dat)
-  utilde <- as.numeric(resid(g_res))
+  utilde <- as.numeric(residuals(g_res))
 
   # 2. Extract the parameter restriction into a conformable column vector R0
   param_idx <- which(colnames(X) == param)
