@@ -40,11 +40,11 @@ anova.lm_robust <- function(...) {
   res <- data.frame(
     df_reg = sapply(mods, function(x) length(x$term)),
     df_res = sapply(mods, function(x) nobs(x) - length(x$term)),
-    R2     = round(sapply(mods, function(x) x$r.squared), 3)
+    R2     = sapply(mods, function(x) x$r.squared)
   )
 
   res$df_diff <- c(NA, diff(res$df_reg))
-  res$R2_diff <- round(c(NA, diff(res$R2)), 3)
+  res$R2_diff <- c(NA, diff(res$R2))
 
   if (any(res$df_diff < 0, na.rm = T)) stop('Enter models from simpler (reduced) to more complex (full).')
 
