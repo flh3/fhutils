@@ -1,6 +1,7 @@
 #' pool_ps_subclass (Pooling function for propensity scores using sub classifications)
 #'
 #' Computes the estimand of interest using subclassifications with propensity scores.
+#' A much simpler way would just be to use the weights produced by the MatchIt package when using the subclass option.
 #'
 #' @param data The dataset to use.
 #' @param outcome The outcome of interest.

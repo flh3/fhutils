@@ -20,4 +20,5 @@ Outputs the treatment effect.
 }
 \description{
 Computes the estimand of interest using subclassifications with propensity scores.
+A much simpler way would just be to use the weights produced by the MatchIt package when using the subclass option.
 }
