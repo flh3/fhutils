@@ -23,12 +23,13 @@ robust_glmm <- function(model) {
   V <- sandwich::sandwich(model)
   p <- length(lme4::fixef(model))
   Vfx <- as.matrix(V)[1:p, 1:p, drop = FALSE]   # fixed-effect block
-  est <- lme4::fixef(model)
+  tmp <- summary(model)$coef
+  est <- tmp[,1]
   se <- sqrt(diag(Vfx))
 
   z <- est / se
   p_val <- 2 * stats::pnorm(-abs(z))
-  mbse <- sqrt(diag(vcov(model)))
+  mbse <- tmp[,2]
 
   stars <- stats::symnum(
     p_val,
