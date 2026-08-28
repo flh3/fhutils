@@ -28,7 +28,7 @@ robust_glmm <- function(model) {
 
   z <- est / se
   p_val <- 2 * stats::pnorm(-abs(z))
-  mbse <- sqrt(diag(stats::vcov(model)))
+  mbse <- sqrt(diag(vcov(model)))
 
   stars <- stats::symnum(
     p_val,
