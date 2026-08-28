@@ -17,7 +17,9 @@ Imports:
     janitor,
     lme4,
     Matrix,
-    rlang
+    rlang,
+    merDeriv,
+    sandwich
 Depends: 
     R (>= 4.1)
 Config/roxygen2/version: 8.0.0
