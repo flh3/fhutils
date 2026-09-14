@@ -22,8 +22,8 @@ build_jk2_rw <- function(zone, rep, weight) {
   colnames(m) <- paste0("rw", seq_len(n_zones))
   for (h in seq_len(n_zones)) {
     in_zone <- zone == zn[h]
-    m[in_zone & rep == 0, h] <- weight[in_zone & rep == 0] * 2
-    m[in_zone & rep == 1, h] <- 0
+    m[in_zone & rep == 1, h] <- weight[in_zone & rep == 0] * 2
+    m[in_zone & rep == 0, h] <- 0
   }
   m
 }
